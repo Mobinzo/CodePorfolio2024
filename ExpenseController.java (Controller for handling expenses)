@@ -1,0 +1,33 @@
+package com.example.finance.controller;
+
+import com.example.finance.model.Expense;
+import com.example.finance.service.ExpenseService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/expenses")
+public class ExpenseController {
+
+    private final ExpenseService expenseService;
+
+    public ExpenseController(ExpenseService expenseService) {
+        this.expenseService = expenseService;
+    }
+
+    @GetMapping
+    public List<Expense> getAllExpenses() {
+        return expenseService.getAllExpenses();
+    }
+
+    @PostMapping
+    public void addExpense(@RequestBody Expense expense) {
+        expenseService.addExpense(expense);
+    }
+}
+ExpenseController.java (Controller for handling expenses)
