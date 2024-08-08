@@ -1,0 +1,19 @@
+package com.example.chat;
+
+import org.springframework.web.socket.TextMessage;
+import org.springframework.web.socket.WebSocketSession;
+import org.springframework.web.socket.handler.TextWebSocketHandler;
+
+public class ChatHandler extends TextWebSocketHandler {
+    
+    @Override
+    protected void handleTextMessage(WebSocketSession session, TextMessage message) {
+        // Broadcast message to all connected clients
+        // This is a simplified example; a real implementation would include message distribution
+        try {
+            session.sendMessage(new TextMessage("Echo: " + message.getPayload()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
