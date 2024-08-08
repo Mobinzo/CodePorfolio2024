@@ -1,0 +1,13 @@
+package com.example.testing;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class SimpleCalculatorTest {
+
+    @Test
+    public void testAdd() {
+        SimpleCalculator calculator = new SimpleCalculator();
+        assertEquals(5, calculator.add(2, 3));
+    }
+}
