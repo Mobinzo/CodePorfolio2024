@@ -1,0 +1,8 @@
+package com.example.finance.model;
+
+public class Expense {
+    private String description;
+    private double amount;
+
+    // Constructors, getters, and setters
+}
