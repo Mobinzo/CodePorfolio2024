@@ -1,0 +1,21 @@
+package com.example.iot.service;
+
+import com.example.iot.model.Device;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+public class DeviceService {
+
+    private final List<Device> devices = new ArrayList<>();
+
+    public List<Device> getAllDevices() {
+        return devices;
+    }
+
+    public void addDevice(Device device) {
+        devices.add(device);
+    }
+}
